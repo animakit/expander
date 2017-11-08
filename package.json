@@ -11,7 +11,7 @@
     "clean": "rimraf lib/*.js",
     "build": "npm run clean && babel -s inline -d ./ **/*.es6",
     "prepublishOnly": "npm run build",
-    "test": "$(npm bin)/jest"
+    "test": "npm run build && jest"
   },
   "author": "Anna Selezniova",
   "license": "MIT",
@@ -29,6 +29,10 @@
     "url": "https://github.com/animakit/animakit-expander"
   },
   "homepage": "https://animakit.github.io",
+  "peerDependencies": {
+    "react": ">= 15.6.2",
+    "react-dom": ">= 15.6.2"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -40,14 +44,14 @@
     "jest": "^19.0.2",
     "jsdom": "^9.11.0",
     "prop-types": "^15.6.0",
+    "react": "^15.6.2",
     "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^15.6.2",
     "react-test-renderer": "^15.6.2",
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "lodash.isequal": "^4.5.0",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2"
+    "lodash.isequal": "^4.5.0"
   },
   "jest": {
     "testEnvironment": "node",
